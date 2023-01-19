@@ -1,54 +1,40 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
-@import '@angular/material/theming';
+@use './palette' as palette;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
 @include mat.core();
-@import './palette';
 
-$base-primary: mat.define-palette($base-primary-palette);
-$base-accent: mat.define-palette($base-accent-palette);
-$base-warn: mat.define-palette($base-warn-palette);
-$base-theme: mat.define-light-theme($base-primary, $base-accent, $base-warn);
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$base-primary: mat.define-palette(palette.$base-primary);
+$base-accent: mat.define-palette(palette.$base-accent);
+$base-warn: mat.define-palette(palette.$base-warn);
 
-$base-theme-background: (
-  status-bar: var(--base-bg),
-  app-bar: #fff,
-  background: var(--base-bg),
-  hover: rgba(black, 0.04),
-  card: var(--base-bg),
-  dialog: var(--base-bg),
-  disabled-button: rgba(black, 0.12),
-  // raised-button: white,
-  // focused-button: $dark-focused,
-  // selected-button: map_get(mat.$grey-palette, 300),
-  // selected-disabled-button: map_get(mat.$grey-palette, 400),
-  // disabled-button-toggle: map_get(mat.$grey-palette, 200),
-  // unselected-chip: map_get(mat.$grey-palette, 300),
-  // disabled-list-option: map_get(mat.$grey-palette, 200)
+$base-typography: mat.define-typography-config(
+  $font-family: var(--acth-font-family)
 );
 
-$base-theme-foreground: (
-  base: var(--base-bg),
-  divider: var(--base-divider),
-  dividers: var(--base-divider),
-  // disabled: $dark-disabled-text,
-  // disabled-button: rgba(black, 0.26),
-  // disabled-text: $dark-disabled-text,
-  // elevation: black,
-  // hint-text: $dark-disabled-text,
-  // secondary-text: var(--base-app-text-secondary),
-  icon: var(--base-text),
-  icons: var(--base-text),
-  text: var(--base-text),
-  // slider-min: rgba(black, 0.87),
-  // slider-off: rgba(black, 0.26),
-  // slider-off-active: rgba(black, 0.38)
-);
-
-$base-theme: map-merge(
-  $base-theme,
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$base-theme: mat.define-light-theme(
   (
-    background: $base-theme-background,
-    foreground: $base-theme-foreground
+    color: (
+      primary: $base-primary,
+      accent: $base-accent,
+      warn: $base-warn
+    )
   )
 );
 
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
 @include mat.all-component-themes($base-theme);
+
+/* You can add global styles to this file, and also import other style files */
