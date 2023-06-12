@@ -4,6 +4,7 @@ Basic project used for quickly cloning to test things out
 
 ```
 git clone https://github.com/IsaacSomething/angular-base.git
+git remote rm origin
 ```
 
 ```
