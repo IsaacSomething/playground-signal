@@ -3,10 +3,16 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 export const routeProps: Routes = [
   {
-    path: 'home',
-    title: 'Home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
-    data: { icon: 'home' }
+    path: 'basic',
+    title: 'Increment/Decrement',
+    loadComponent: () => import('./basic/basic.component').then(c => c.HomeComponent),
+    data: { icon: 'router' }
+  },
+  {
+    path: 'todos',
+    title: 'Todos',
+    loadComponent: () => import('./todos/todos.component').then(c => c.TodosComponent),
+    data: { icon: 'format_list_numbered' }
   }
 ];
 

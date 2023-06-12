@@ -10,19 +10,10 @@ import { routeProps } from '@base/app-routing.module';
   selector: 'base-menu',
   standalone: true,
   imports: [CommonModule, RouterModule, MatIconModule, MatToolbarModule, MatListModule],
-  styles: [
-    `
-      .title {
-        text-transform: uppercase;
-        font-size: 14px;
-        margin-top: 3px;
-        margin-left: 7px;
-      }
-    `
-  ],
+  styles: [],
   template: `
     <mat-toolbar>
-      <span class="title">Angular Base</span>
+      <span class="uppercase mt-[3px] ml-[7px] text-sm">Signal</span>
     </mat-toolbar>
 
     <mat-nav-list>
@@ -31,10 +22,10 @@ import { routeProps } from '@base/app-routing.module';
         <div matListItemTitle>{{ route.title }}</div>
       </mat-list-item>
 
-      <mat-list-item *ngFor="let item of [1, 1, 1, 1, 1, 1]" routerLink="/">
+      <!--   <mat-list-item *ngFor="let item of [1, 1, 1, 1, 1, 1]" routerLink="/">
         <mat-icon matListItemIcon>folder</mat-icon>
         <div matListItemTitle>Item</div>
-      </mat-list-item>
+      </mat-list-item> -->
     </mat-nav-list>
   `
 })

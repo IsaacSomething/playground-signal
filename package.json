@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^16.0.4",
     "@angular/platform-browser-dynamic": "^16.0.4",
     "@angular/router": "^16.0.4",
+    "ngx-highlightjs": "^9.0.0",
     "rxjs": "~7.5.0",
     "zone.js": "~0.13.0"
   },
