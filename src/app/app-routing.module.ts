@@ -17,7 +17,7 @@ export const routeProps: Routes = [
 ];
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'basic', pathMatch: 'full' },
   ...routeProps,
   {
     path: '**',

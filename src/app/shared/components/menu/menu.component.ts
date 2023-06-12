@@ -12,7 +12,7 @@ import { routeProps } from '@base/app-routing.module';
   imports: [CommonModule, RouterModule, MatIconModule, MatToolbarModule, MatListModule],
   styles: [],
   template: `
-    <mat-toolbar>
+    <mat-toolbar class="bg-transparent">
       <span class="uppercase mt-[3px] ml-[7px] text-sm">Signal</span>
     </mat-toolbar>
 
