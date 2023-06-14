@@ -20,7 +20,8 @@ export class HomeComponent {
   private readonly NUM_INITIAL = 0;
   num = signal<number>(this.NUM_INITIAL);
 
-  code = `  num = signal<number>(this.NUM_INITIAL);
+  code = `  private readonly NUM_INITIAL = 0;
+  num = signal<number>(this.NUM_INITIAL);
 
   increment() {
     this.num.update(value => ++value);

@@ -1,16 +1,15 @@
-import { JsonPipe, NgFor } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Inject, Signal, WritableSignal, effect, inject } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Signal, WritableSignal, inject } from '@angular/core';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatListModule, MatSelectionListChange } from '@angular/material/list';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { HighlightModule } from 'ngx-highlightjs';
-import { TodosService } from './todos.service';
 import { ITodo } from './todos.interface';
+import { TodosService } from './todos.service';
 
 @Component({
   selector: 'base-todos',
@@ -18,13 +17,11 @@ import { ITodo } from './todos.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     NgFor,
-    JsonPipe,
     MatButtonModule,
     HighlightModule,
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDividerModule,
     MatBadgeModule,
     MatIconModule,
     MatSnackBarModule,

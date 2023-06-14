@@ -16,7 +16,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
         <mat-icon>{{ sidenav.opened ? 'menu_open' : 'menu' }}</mat-icon>
       </button>
       .
-      <span class="spacer"></span>
+      <span class="flex-auto"></span>
       <button mat-icon-button><mat-icon>show_chart</mat-icon></button>
       <button mat-icon-button><mat-icon>line_weight</mat-icon></button>
     </mat-toolbar>
